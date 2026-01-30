@@ -58,4 +58,5 @@ curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main
 echo "[9/9] 🔓 Установка Zapret..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Snowy-Fluffy/zapret.installer/refs/heads/main/installer.sh)"
 
+rm -rf /tmp/NeoLinux
 echo "✅ Установка Завершена Перезагрузите Систему!"
