@@ -1,6 +1,4 @@
-<a href="resources/info/KogosOS.md">
-<img src="resources/icon/kos.svg" width="80" align="left" style="margin-right: 15px;">
-</a>
+<img src="resources/icon/logo.svg" width="200" align="left" style="margin-right: 15px;">
 
 # MASTERNUX
 MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Programms
@@ -9,7 +7,9 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 ---
 
+<a href="resources/info/KogosOS.md">
 <img src="resources/icon/kos.svg" width="80" align="left" style="margin-right: 15px;">
+</a>
 
 - **KogosOS**
    verision 2.1
