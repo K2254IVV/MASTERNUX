@@ -28,7 +28,7 @@
 
 ### Для Arch Linux:
 ```bash
-sudo curl -sSL "" | sudo bash
+sh -c "$(curl -fsSL )"
 ```
 
 ---
