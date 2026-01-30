@@ -6,6 +6,7 @@ echo "[1/5] 🔄 Система Обновляется... "
 pacman -Syu --noconfirm
 
 echo "[2/5] 📦 Установка Пакетов..."
+sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/pkglist.txt | sudo pacman -S --noconfirm -
 
 echo "[3/5] 📦 Установка yay..."
