@@ -22,3 +22,5 @@ libreoffice-fresh
 steam
 retroarch
 flatpak
+figlet
+jp2a
