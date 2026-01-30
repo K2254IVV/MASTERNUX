@@ -11,6 +11,7 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 - **KogosOS**
    verision 2.1
+
    Forks: RupyOS 2.0
 
 <br clear="left"/>
@@ -19,6 +20,7 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 - **RupyOS**
    verision 2.0
+
    Forks: RupyPorts, NeoLinux
 
 <br clear="left"/>
