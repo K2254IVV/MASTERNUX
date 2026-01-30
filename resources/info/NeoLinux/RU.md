@@ -5,7 +5,7 @@
 <h1 align="center">NeoLinux</h1>
 
 <p align="center">
-  <strong>Универсальный установщик для Arch Linux с KDE Plasma</strong>
+  <strong>Мастер Скрипт Установки Пакетов </strong>
 </p>
 
 ---
