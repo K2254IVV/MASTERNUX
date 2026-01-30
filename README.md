@@ -51,3 +51,21 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
    Forks: None
 
 <br clear="left"/>
+
+<img src="resources/icon/ctlnx.svg" width="80" align="left" style="margin-right: 15px;">
+
+- **CattLinux**
+   verision 1.0
+
+   Forks: None
+
+<br clear="left"/>
+
+<img src="resources/icon/xos.svg" width="80" align="left" style="margin-right: 15px;">
+
+- **XenerOS**
+   verision 1.0
+
+   Forks: None
+
+<br clear="left"/>
