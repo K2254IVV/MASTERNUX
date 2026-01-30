@@ -7,16 +7,16 @@ if ! id "$cuser" &>/dev/null; then
   exit 1
 fi
 
-echo "[1/9] 🔄 Система Обновляется... "
+echo "[1/8] 🔄 Система Обновляется... "
 sudo pacman -Syu --noconfirm
 
-echo "[2/9] 📦 Установка Пакетов..."
+echo "[2/8] 📦 Установка Пакетов..."
 sudo sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
 sudo sed -i 's/^#\?ParallelDownloads.*/ParallelDownloads = 50/' /etc/pacman.conf
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/pkglist.txt | sudo pacman -S --noconfirm -
 
-echo "[3/9] 📦 Установка yay..."
-mkdir -p /tmp/NeoLinux
+echo "[3/8] 📦 Установка yay..."
+sudo -u "$cuser" mkdir -p /tmp/NeoLinux
 if ! command -v yay &> /dev/null; then
   git clone https://aur.archlinux.org/yay.git /tmp/NeoLinux/yay
   cd /tmp/NeoLinux/yay
@@ -24,45 +24,45 @@ if ! command -v yay &> /dev/null; then
   cd -
 fi
 
-echo "[4/9] 📦 Установка Пакетов из AUR..."
+echo "[4/8] 📦 Установка Пакетов из AUR..."
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/AURpkglist.txt | sudo -u "$cuser" yay -S --noconfirm --answerdiff None --answeredit None -
 
-echo "[5/9] 📦 Установка Пакетов из Flathub..."
+echo "[5/8] 📦 Установка Пакетов из Flathub..."
 sudo -u "$cuser" flatpak remote-add --if-not-exists --noninteractive flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/FHpkglist.txt | sudo -u "$cuser" xargs flatpak install -y --noninteractive
 
-echo "[6/9] 🎨 Установка Тем и Иконок KDE... [1/3]"
+echo "[6/8] 🎨 Установка Тем и Иконок KDE... [1/3]"
 git clone https://github.com/yeyushengfan258/Win11OS-kde /tmp/NeoLinux/Win11Theme
 cd /tmp/NeoLinux/Win11Theme
 chmod +x install.sh
 sudo -u "$cuser" ./install.sh
 cd -
 
-echo "[6/9] 🎨 Установка Тем и Иконок KDE... [2/3]"
+echo "[6/8] 🎨 Установка Тем и Иконок KDE... [2/3]"
 git clone https://github.com/yeyushengfan258/Win11-icon-theme /tmp/NeoLinux/Win11Icons
 cd /tmp/NeoLinux/Win11Icons
 chmod +x install.sh
 sudo -u "$cuser" ./install.sh
 cd -
 
-echo "[6/9] 🎨 Установка Тем и Иконок KDE... [3/3]"
+echo "[6/8] 🎨 Установка Тем и Иконок KDE... [3/3]"
 git clone https://github.com/yeyushengfan258/We10X-icon-theme /tmp/NeoLinux/WeXIcons
 cd /tmp/NeoLinux/WeXIcons
 chmod +x install.sh
 sudo -u "$cuser" ./install.sh
 cd -
 
-echo "[7/9] 🖥️ Настройка Kitty..."
+echo "[7/8] 🖥️ Настройка Kitty..."
 mkdir -p /home/$cuser/.config/kitty
-curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/config.txt" -o /home/$cuser/.config/kitty/kitty.conf
+sudo -u "$cuser" curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/config.txt" -o /home/$cuser/.config/kitty/kitty.conf
 
-echo "[8/9] 🖥️ Настройка Fastfetch..."
+echo "[8/8] 🖥️ Настройка Fastfetch..."
 mkdir -p /home/$cuser/.config/fastfetch
-curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/fastfetch.jsonc" -o /home/$cuser/.config/fastfetch/config.jsonc
-curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/icon.txt" -o /home/$cuser/.config/fastfetch/icon.txt
+sudo -u "$cuser" curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/fastfetch.jsonc" -o /home/$cuser/.config/fastfetch/config.jsonc
+sudo -u "$cuser" curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/icon.txt" -o /home/$cuser/.config/fastfetch/icon.txt
 
-echo "[9/9] 🔓 Установка Zapret..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Snowy-Fluffy/zapret.installer/refs/heads/main/installer.sh)"
+#echo "[9/9] 🔓 Установка Zapret..."
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/Snowy-Fluffy/zapret.installer/refs/heads/main/installer.sh)"
 
 rm -rf /tmp/NeoLinux
 echo "✅ Установка Завершена Перезагрузите Систему!"
