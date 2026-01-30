@@ -18,8 +18,8 @@ curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/
 echo "[3/8] 📦 Установка yay..."
 sudo -u "$cuser" mkdir -p /tmp/NeoLinux
 if ! command -v yay &> /dev/null; then
-  sudo -u "$cuser" git clone https://aur.archlinux.org/yay.git /tmp/NeoLinux/yay
-  sudo -u "$cuser" cd /tmp/NeoLinux/yay
+  git clone https://aur.archlinux.org/yay.git /tmp/NeoLinux/yay
+  cd /tmp/NeoLinux/yay
   sudo -u "$cuser" makepkg -si --noconfirm
   cd -
 fi
@@ -28,25 +28,25 @@ echo "[4/8] 📦 Установка Пакетов из AUR..."
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/AURpkglist.txt | sudo -u "$cuser" yay -S --noconfirm --answerdiff None --answeredit None -
 
 echo "[5/8] 📦 Установка Пакетов из Flathub..."
-sudo -u "$cuser" flatpak remote-add --if-not-exists --noninteractive flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
+flatpak remote-add --if-not-exists --noninteractive flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/FHpkglist.txt | sudo -u "$cuser" xargs flatpak install -y --noninteractive
 
 echo "[6/8] 🎨 Установка Тем и Иконок KDE... [1/3]"
-sudo -u "$cuser" git clone https://github.com/yeyushengfan258/Win11OS-kde /tmp/NeoLinux/Win11Theme
+git clone https://github.com/yeyushengfan258/Win11OS-kde /tmp/NeoLinux/Win11Theme
 cd /tmp/NeoLinux/Win11Theme
 chmod +x install.sh
 sudo -u "$cuser" ./install.sh
 cd -
 
 echo "[6/8] 🎨 Установка Тем и Иконок KDE... [2/3]"
-sudo -u "$cuser" git clone https://github.com/yeyushengfan258/Win11-icon-theme /tmp/NeoLinux/Win11Icons
+git clone https://github.com/yeyushengfan258/Win11-icon-theme /tmp/NeoLinux/Win11Icons
 cd /tmp/NeoLinux/Win11Icons
 chmod +x install.sh
 sudo -u "$cuser" ./install.sh
 cd -
 
 echo "[6/8] 🎨 Установка Тем и Иконок KDE... [3/3]"
-sudo -u "$cuser" git clone https://github.com/yeyushengfan258/We10X-icon-theme /tmp/NeoLinux/WeXIcons
+git clone https://github.com/yeyushengfan258/We10X-icon-theme /tmp/NeoLinux/WeXIcons
 cd /tmp/NeoLinux/WeXIcons
 chmod +x install.sh
 sudo -u "$cuser" ./install.sh
