@@ -9,7 +9,7 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 <details>
 
-<summary> Another README.MD Languages</summary>
+<summary> Another README.MD Translates </summary>
 
 [English README](README.md)
 
