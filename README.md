@@ -7,7 +7,7 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 ---
 
-<img src="resources/icon/kos.svg" width="50" align="left" style="margin-right: 15px;">
+<img src="resources/icon/kos.svg" width="80" align="left" style="margin-right: 15px;">
 
 - **KogosOS**
    verision 2.1
@@ -16,7 +16,7 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 <br clear="left"/>
 
-<img src="resources/icon/ryos.svg" width="50" align="left" style="margin-right: 15px;">
+<img src="resources/icon/ryos.svg" width="80" align="left" style="margin-right: 15px;">
 
 - **RupyOS**
    verision 2.0
