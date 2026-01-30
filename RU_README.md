@@ -9,11 +9,11 @@ MasterNUX - Мастер-Установочных Скриптов Репози�
 
 <details>
 
-<summary> Another README.MD Languages</summary>
+<summary> Другие Переводы README.MD </summary>
 
-[English README](README.md)
+[Английский README](README.md)
 
-[Russian README](RU_README.md)
+[Русский README](RU_README.md)
 
 </details>
 
