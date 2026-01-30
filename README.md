@@ -19,7 +19,7 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 ---
 
-<a href="resources/info/KogosOS.md">
+<a href="resources/info/KogosOS/RU.md">
 <img src="resources/icon/kos.svg" width="80" align="left" style="margin-right: 15px;">
 </a>
 
