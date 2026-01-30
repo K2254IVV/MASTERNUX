@@ -16,7 +16,7 @@ sudo sed -i 's/^#\?ParallelDownloads.*/ParallelDownloads = 50/' /etc/pacman.conf
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/pkglist.txt | sudo pacman -S --noconfirm -
 
 echo "[3/8] 📦 Установка yay..."
-sudo -u "$cuser" mkdir -p /tmp/NeoLinux
+mkdir -p /tmp/NeoLinux && chmod 777 /tmp/NeoLinux
 if ! command -v yay &> /dev/null; then
   git clone https://aur.archlinux.org/yay.git /tmp/NeoLinux/yay
   cd /tmp/NeoLinux/yay
