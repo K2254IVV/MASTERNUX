@@ -39,7 +39,7 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 - **NeoLinux**
    verision 1.0
 
-   Forks: The Zero & One's
+   Forks: "The Zero & One's"
 
 <br clear="left"/>
 
