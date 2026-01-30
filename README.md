@@ -5,6 +5,7 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 <br clear="left"/>
 
+[Russian README](RU_README)
 ---
 
 <a href="resources/info/KogosOS.md">
