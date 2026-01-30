@@ -1,4 +1,4 @@
-<img src="resources/icon/logo.svg" width="100" align="left" style="margin-right: 15px;">
+<img src="resources/icon/logo.svg" width="200" align="left" style="margin-right: 15px;">
 
 # MASTERNUX
 MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Programms
