@@ -25,7 +25,7 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 <br clear="left"/>
 
-<img src="resources/icon/ryos.svg" width="80" align="left" style="margin-right: 15px;">
+<img src="resources/icon/rpos.svg" width="80" align="left" style="margin-right: 15px;">
 
 - **RupyOS Ports**
    verision 1.0
