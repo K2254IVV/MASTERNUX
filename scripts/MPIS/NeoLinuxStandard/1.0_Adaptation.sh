@@ -1,7 +1,13 @@
 #!/bin/bash
 
 sudo -v
+read -r cuser
+if ! id "$cuser" &>/dev/null; then
+  echo "❌ Пользователя $cuser не существует!"
+  exit 1
+fi
 
+sudo su
 echo "[1/9] 🔄 Система Обновляется... "
 pacman -Syu --noconfirm
 
@@ -15,35 +21,36 @@ mkdir -p /tmp/NeoLinux
 if ! command -v yay &> /dev/null; then
   git clone https://aur.archlinux.org/yay.git /tmp/NeoLinux/yay
   cd /tmp/NeoLinux/yay
-  makepkg -si --noconfirm
+  sudo -u "$cuser" makepkg -si --noconfirm
   cd -
 fi
 
 echo "[4/9] 📦 Установка Пакетов из AUR..."
-curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/AURpkglist.txt | yay -S --noconfirm --answerdiff None --answeredit None -
+curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/AURpkglist.txt | sudo -u "$cuser" yay -S --noconfirm --answerdiff None --answeredit None -
 
 echo "[5/9] 📦 Установка Пакетов из Flathub..."
+flatpak remote-add --if-not-exists --noninteractive flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/FHpkglist.txt | xargs flatpak install -y --noninteractive
 
 echo "[6/9] 🎨 Установка Тем и Иконок KDE... [1/3]"
 git clone https://github.com/yeyushengfan258/Win11OS-kde /tmp/NeoLinux/Win11Theme
 cd /tmp/NeoLinux/Win11Theme
 chmod +x install.sh
-./install.sh
+sudo -u "$cuser" ./install.sh
 cd -
 
 echo "[6/9] 🎨 Установка Тем и Иконок KDE... [2/3]"
 git clone https://github.com/yeyushengfan258/Win11-icon-theme /tmp/NeoLinux/Win11Icons
 cd /tmp/NeoLinux/Win11Icons
 chmod +x install.sh
-./install.sh
+sudo -u "$cuser" ./install.sh
 cd -
 
 echo "[6/9] 🎨 Установка Тем и Иконок KDE... [3/3]"
-https://github.com/yeyushengfan258/We10X-icon-theme /tmp/NeoLinux/WeXIcons
+git clone https://github.com/yeyushengfan258/We10X-icon-theme /tmp/NeoLinux/WeXIcons
 cd /tmp/NeoLinux/WeXIcons
 chmod +x install.sh
-./install.sh
+sudo -u "$cuser" ./install.sh
 cd -
 
 echo "[7/9] 🖥️ Настройка Kitty..."
@@ -52,8 +59,8 @@ curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main
 
 echo "[8/9] 🖥️ Настройка Fastfetch..."
 mkdir -p ~/.config/fastfetch
-curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/fastfetch.jsonc" -o ~/.config/fastfetch/config.jsonc
-curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/icon.txt" -o ~/.config/fastfetch/icon.txt
+curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/fastfetch.jsonc" -o /home/$cuser/.config/fastfetch/config.jsonc
+curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/icon.txt" -o /home/$cuser/.config/fastfetch/icon.txt
 
 echo "[9/9] 🔓 Установка Zapret..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Snowy-Fluffy/zapret.installer/refs/heads/main/installer.sh)"
