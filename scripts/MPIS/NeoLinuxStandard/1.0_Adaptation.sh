@@ -28,8 +28,8 @@ echo "[4/8] 📦 Установка Пакетов из AUR..."
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/AURpkglist.txt | sudo -u "$cuser" yay -S --noconfirm --answerdiff None --answeredit None -
 
 echo "[5/8] 📦 Установка Пакетов из Flathub..."
-flatpak remote-add --if-not-exists --noninteractive flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
-curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/FHpkglist.txt | xargs flatpak install -y --noninteractive
+sudo flatpak remote-add --if-not-exists --noninteractive flathub https://dl.flathub.org/repo/flathub.flatpakrepo 
+curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/FHpkglist.txt | xargs sudo flatpak install -y --noninteractive
 
 echo "[6/8] 🎨 Установка Тем и Иконок KDE... [1/3]"
 git clone https://github.com/yeyushengfan258/Win11OS-kde /tmp/NeoLinux/Win11Theme
