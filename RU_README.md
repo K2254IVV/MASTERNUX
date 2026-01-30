@@ -7,6 +7,18 @@ MasterNUX - Мастер-Установочных Скриптов Репози�
 
 ---
 
+<details>
+
+<summary> Another README.MD Languages</summary>
+
+[English README](README.md)
+
+[Russian README](RU_README.md)
+
+</details>
+
+---
+
 <a href="resources/info/KogosOS.md">
 <img src="resources/icon/kos.svg" width="80" align="left" style="margin-right: 15px;">
 </a>
