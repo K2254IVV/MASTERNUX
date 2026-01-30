@@ -42,6 +42,7 @@ sudo curl -sSL "" | sudo bash
 | **Игры**        | Steam, RPCS3, PCSX2                          |
 | **Соцсети**     | Telegram, Discord                            |
 | **Эмуляторы**   | VirtualBox, xenia-canary-git, RetroArch      |
+| **Медиа Плееры**| MPV, VLC                                     |
 
 ---
 
