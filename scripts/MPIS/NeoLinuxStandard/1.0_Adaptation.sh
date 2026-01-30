@@ -18,8 +18,8 @@ curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/
 echo "[3/8] 📦 Установка yay..."
 sudo -u "$cuser" mkdir -p /tmp/NeoLinux
 if ! command -v yay &> /dev/null; then
-  git clone https://aur.archlinux.org/yay.git /tmp/NeoLinux/yay
-  cd /tmp/NeoLinux/yay
+  sudo -u "$cuser" git clone https://aur.archlinux.org/yay.git /tmp/NeoLinux/yay
+  sudo -u "$cuser" cd /tmp/NeoLinux/yay
   sudo -u "$cuser" makepkg -si --noconfirm
   cd -
 fi
@@ -32,32 +32,32 @@ sudo -u "$cuser" flatpak remote-add --if-not-exists --noninteractive flathub htt
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/FHpkglist.txt | sudo -u "$cuser" xargs flatpak install -y --noninteractive
 
 echo "[6/8] 🎨 Установка Тем и Иконок KDE... [1/3]"
-git clone https://github.com/yeyushengfan258/Win11OS-kde /tmp/NeoLinux/Win11Theme
+sudo -u "$cuser" git clone https://github.com/yeyushengfan258/Win11OS-kde /tmp/NeoLinux/Win11Theme
 cd /tmp/NeoLinux/Win11Theme
 chmod +x install.sh
 sudo -u "$cuser" ./install.sh
 cd -
 
 echo "[6/8] 🎨 Установка Тем и Иконок KDE... [2/3]"
-git clone https://github.com/yeyushengfan258/Win11-icon-theme /tmp/NeoLinux/Win11Icons
+sudo -u "$cuser" git clone https://github.com/yeyushengfan258/Win11-icon-theme /tmp/NeoLinux/Win11Icons
 cd /tmp/NeoLinux/Win11Icons
 chmod +x install.sh
 sudo -u "$cuser" ./install.sh
 cd -
 
 echo "[6/8] 🎨 Установка Тем и Иконок KDE... [3/3]"
-git clone https://github.com/yeyushengfan258/We10X-icon-theme /tmp/NeoLinux/WeXIcons
+sudo -u "$cuser" git clone https://github.com/yeyushengfan258/We10X-icon-theme /tmp/NeoLinux/WeXIcons
 cd /tmp/NeoLinux/WeXIcons
 chmod +x install.sh
 sudo -u "$cuser" ./install.sh
 cd -
 
 echo "[7/8] 🖥️ Настройка Kitty..."
-mkdir -p /home/$cuser/.config/kitty
+sudo -u "$cuser" mkdir -p /home/$cuser/.config/kitty
 sudo -u "$cuser" curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/config.txt" -o /home/$cuser/.config/kitty/kitty.conf
 
 echo "[8/8] 🖥️ Настройка Fastfetch..."
-mkdir -p /home/$cuser/.config/fastfetch
+sudo -u "$cuser" mkdir -p /home/$cuser/.config/fastfetch
 sudo -u "$cuser" curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/fastfetch.jsonc" -o /home/$cuser/.config/fastfetch/config.jsonc
 sudo -u "$cuser" curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/icon.txt" -o /home/$cuser/.config/fastfetch/icon.txt
 
