@@ -33,3 +33,21 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
    Forks: None
 
 <br clear="left"/>
+
+<img src="resources/icon/neol.svg" width="80" align="left" style="margin-right: 15px;">
+
+- **NeoLinux**
+   verision 1.0
+
+   Forks: None
+
+<br clear="left"/>
+
+<img src="resources/icon/neomatrixl.svg" width="80" align="left" style="margin-right: 15px;">
+
+- **NeoLinux: The Zero & One's**
+   verision 1.0
+
+   Forks: None
+
+<br clear="left"/>
