@@ -48,7 +48,9 @@ MasterNUX - Master Installations Scripts Repository with 4+ MasterScripts Progra
 
 <br clear="left"/>
 
+<a href="resources/info/NeoLinux/RU.md">
 <img src="resources/icon/neol.svg" width="80" align="left" style="margin-right: 15px;">
+</a>
 
 - **NeoLinux**
    verision 1.0
