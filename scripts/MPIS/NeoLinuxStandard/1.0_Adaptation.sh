@@ -7,7 +7,6 @@ if ! id "$cuser" &>/dev/null; then
   exit 1
 fi
 
-sudo su
 echo "[1/9] 🔄 Система Обновляется... "
 pacman -Syu --noconfirm
 
@@ -54,11 +53,11 @@ sudo -u "$cuser" ./install.sh
 cd -
 
 echo "[7/9] 🖥️ Настройка Kitty..."
-mkdir -p ~/.config/kitty
-curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/config.txt" -o ~/.config/kitty/kitty.conf
+mkdir -p /home/$cuser/.config/kitty
+curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/config.txt" -o /home/$cuser/.config/kitty/kitty.conf
 
 echo "[8/9] 🖥️ Настройка Fastfetch..."
-mkdir -p ~/.config/fastfetch
+mkdir -p /home/$cuser/.config/fastfetch
 curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/fastfetch.jsonc" -o /home/$cuser/.config/fastfetch/config.jsonc
 curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/icon.txt" -o /home/$cuser/.config/fastfetch/icon.txt
 
