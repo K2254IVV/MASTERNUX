@@ -2,15 +2,15 @@
 
 sudo -v
 
-echo "[1/5] 🔄 Система Обновляется... "
+echo "[1/9] 🔄 Система Обновляется... "
 pacman -Syu --noconfirm
 
-echo "[2/5] 📦 Установка Пакетов..."
+echo "[2/9] 📦 Установка Пакетов..."
 sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
 sudo sed -i 's/^#\?ParallelDownloads.*/ParallelDownloads = 50/' /etc/pacman.conf
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/pkglist.txt | sudo pacman -S --noconfirm -
 
-echo "[3/5] 📦 Установка yay..."
+echo "[3/9] 📦 Установка yay..."
 mkdir -p /tmp/NeoLinux
 if ! command -v yay &> /dev/null; then
   git clone https://aur.archlinux.org/yay.git /tmp/NeoLinux/yay
@@ -19,38 +19,43 @@ if ! command -v yay &> /dev/null; then
   cd -
 fi
 
-echo "[4/5] 📦 Установка Пакетов из AUR..."
+echo "[4/9] 📦 Установка Пакетов из AUR..."
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/AURpkglist.txt | yay -S --noconfirm --answerdiff None --answeredit None -
 
-echo "[5/5] 📦 Установка Пакетов из Flathub..."
+echo "[5/9] 📦 Установка Пакетов из Flathub..."
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/FHpkglist.txt | xargs flatpak install -y --noninteractive
 
-echo "[6/5] 🎨 Установка Тем и Иконок KDE... [1/3]"
+echo "[6/9] 🎨 Установка Тем и Иконок KDE... [1/3]"
 git clone https://github.com/yeyushengfan258/Win11OS-kde /tmp/NeoLinux/Win11Theme
 cd /tmp/NeoLinux/Win11Theme
 chmod +x install.sh
 ./install.sh
 cd -
 
-echo "[6/5] 🎨 Установка Тем и Иконок KDE... [2/3]"
+echo "[6/9] 🎨 Установка Тем и Иконок KDE... [2/3]"
 git clone https://github.com/yeyushengfan258/Win11-icon-theme /tmp/NeoLinux/Win11Icons
 cd /tmp/NeoLinux/Win11Icons
 chmod +x install.sh
 ./install.sh
 cd -
 
-echo "[6/5] 🎨 Установка Тем и Иконок KDE... [3/3]"
+echo "[6/9] 🎨 Установка Тем и Иконок KDE... [3/3]"
 https://github.com/yeyushengfan258/We10X-icon-theme /tmp/NeoLinux/WeXIcons
 cd /tmp/NeoLinux/WeXIcons
 chmod +x install.sh
 ./install.sh
 cd -
 
-echo "[7/8] 🖥️ Настройка Kitty..."
+echo "[7/9] 🖥️ Настройка Kitty..."
 mkdir -p ~/.config/kitty
 curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/config.txt" -o ~/.config/kitty/kitty.conf
 
-echo "[8/8] 🔓 Установка Zapret..."
+echo "[8/9] 🖥️ Настройка Fastfetch..."
+mkdir -p ~/.config/fastfetch
+curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/fastfetch.jsonc" -o ~/.config/fastfetch/config.jsonc
+curl -fsSL "https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/icon.txt" -o ~/.config/fastfetch/icon.txt
+
+echo "[9/9] 🔓 Установка Zapret..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Snowy-Fluffy/zapret.installer/refs/heads/main/installer.sh)"
 
-echo "✅ Установка Завршена Перезагрузите Систему!"
+echo "✅ Установка Завершена Перезагрузите Систему!"
