@@ -8,10 +8,10 @@ if ! id "$cuser" &>/dev/null; then
 fi
 
 echo "[1/9] 🔄 Система Обновляется... "
-pacman -Syu --noconfirm
+sudo pacman -Syu --noconfirm
 
 echo "[2/9] 📦 Установка Пакетов..."
-sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
+sudo sed -i '/^#\[multilib\]/,+1 s/^#//' /etc/pacman.conf
 sudo sed -i 's/^#\?ParallelDownloads.*/ParallelDownloads = 50/' /etc/pacman.conf
 curl -fsSL https://raw.githubusercontent.com/K2254IVV/MASTERNUX/refs/heads/main/scripts/MPIS/NeoLinuxStandard/pkglist.txt | sudo pacman -S --noconfirm -
 
