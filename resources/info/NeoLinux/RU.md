@@ -27,8 +27,16 @@
 ## 🛠 Установка
 
 ### Для Arch Linux:
+Рекомендованная (Нужен CURL)
 ```bash
 sh -c "$(curl -fsSL )"
+```
+Рекомендованная #2 (Нужен GIT,CURL)
+```bash
+git clone https://github.com/K2254IVV/MASTERNUX
+cd MASTERNUX
+chmod +x installer.sh
+./installer.sh # Выбираем Вариант NeoLinux Standard
 ```
 
 ---
